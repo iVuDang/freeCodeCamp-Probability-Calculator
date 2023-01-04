@@ -29,7 +29,7 @@ Second, create an experiment function that should return a probability. Here is 
 <br>
 
 ## Preview:
-<img src="https://github.com/iVuDang/freeCodeCamp-Polygon-Area-Calculator/blob/main/Polygon%20preview.png" width=100% height=100%>
+<img src="https://github.com/iVuDang/freeCodeCamp-Probability-Calculator/blob/main/probability%20print.png" width=100% height=100%>
 
 <br>
 
@@ -41,7 +41,7 @@ Second, create an experiment function that should return a probability. Here is 
 ## Outcome :white_check_mark: :
 | Website | Link | 
 | ------------- | ------------- | 
-| Replit demo | https://replit.com/@iVuDang/boilerplate-polygon-area-calculator#shape_calculator.py | 
+| Replit demo | https://replit.com/@iVuDang/boilerplate-probability-calculator#prob_calculator.py | 
 
 <br>
 
