@@ -208,22 +208,22 @@ Second, create an experiment function that should return a probability. Here is 
 
     The view object will reflect any changes done to the dictionary, see example below.
 
-Syntax
-dictionary.keys()
+    Syntax
+    dictionary.keys()
 
-    ```Python 
-        car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-        }
+        ```Python 
+            car = {
+            "brand": "Ford",
+            "model": "Mustang",
+            "year": 1964
+            }
 
-        x = car.keys()
+            x = car.keys()
 
-        print(x)
+            print(x)
 
-        dict_keys(['brand', 'model', 'year'])
-    ```
+            dict_keys(['brand', 'model', 'year'])
+        ```
 
 8. ;print(variable)
 
