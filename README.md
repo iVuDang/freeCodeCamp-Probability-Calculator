@@ -50,147 +50,147 @@ Second, create an experiment function that should return a probability. Here is 
 ## My Notes - stuff I learned:  
 1) Arbitrary Keyword Arguments, **kwargs
 
-Keyword Arguments are often shortened to kwargs.
+    Keyword Arguments are often shortened to kwargs.
 
-If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition.
+    If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition.
 
-This way the function will receive a dictionary of arguments, and can access the items accordingly.
+    This way the function will receive a dictionary of arguments, and can access the items accordingly.
 
-**kwargs allows us to pass a variable number of keyword arguments to a Python function.
+    **kwargs allows us to pass a variable number of keyword arguments to a Python function.
 
-Example 
+    Example 
 
-    ```Python 
-        def total_fruits(**kwargs):
-            print(kwargs, type(kwargs))
+        ```Python 
+            def total_fruits(**kwargs):
+                print(kwargs, type(kwargs))
 
-        total_fruits(banana=5, mango=7, apple=8)
-    ```
+            total_fruits(banana=5, mango=7, apple=8)
+        ```
 
-Output:
-    ```Python 
-        {'banana': 5, 'mango': 7, 'apple': 8} <class 'dict'>
+    Output:
+        ```Python 
+            {'banana': 5, 'mango': 7, 'apple': 8} <class 'dict'>
 
-        total_fruits(banana=5, mango=7, apple=8)
-    ```
+            total_fruits(banana=5, mango=7, apple=8)
+        ```
 
-    ```Python 
-        def total_fruits(**fruits):
-            total = 0
-            for amount in fruits.values():
-                total += amount
-            return total
+        ```Python 
+            def total_fruits(**fruits):
+                total = 0
+                for amount in fruits.values():
+                    total += amount
+                return total
 
-        print(total_fruits(banana=5, mango=7, apple=8))
-        print(total_fruits(banana=5, mango=7, apple=8, oranges=10))
-        print(total_fruits(banana=5, mango=7))
-    ```
+            print(total_fruits(banana=5, mango=7, apple=8))
+            print(total_fruits(banana=5, mango=7, apple=8, oranges=10))
+            print(total_fruits(banana=5, mango=7))
+        ```
 
-Output:
+    Output:
 
-    ```Python 
-    20
-    30
-    12
-    ```
+        ```Python 
+        20
+        30
+        12
+        ```
 
-Note that the name of the argument need not necessarily be kwargs – again, it can be anything. In this case, it's fruits. But it's generally a standard way to use **kwargs as the name.
+    Note that the name of the argument need not necessarily be kwargs – again, it can be anything. In this case, it's fruits. But it's generally a standard way to use **kwargs as the name.
 
 
 
 2. items() method
-items() method returns a view object. 
-The view object contains the key-value pairs of the dictionary, as tuples in a list.
-(Object [List (Tuples key-value) ] )
+    items() method returns a view object. 
+    The view object contains the key-value pairs of the dictionary, as tuples in a list.
+    (Object [List (Tuples key-value) ] )
 
-Syntax
-dictionary.items()
+    Syntax
+    dictionary.items()
 
-Example:
+    Example:
 
-    ```Python 
-        car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-        }
+        ```Python 
+            car = {
+            "brand": "Ford",
+            "model": "Mustang",
+            "year": 1964
+            }
 
-        x = car.items()
+            x = car.items()
 
-        print(x)
-    ```
+            print(x)
+        ```
 
-Output:
+    Output:
 
-    ```Python 
-        dict_items(
-                    [
-                    ('brand', 'Ford'), 
-                    ('model', 'Mustang'), 
-                    ('year', 1964)
-                    ]
-                )
-    ```
+        ```Python 
+            dict_items(
+                        [
+                        ('brand', 'Ford'), 
+                        ('model', 'Mustang'), 
+                        ('year', 1964)
+                        ]
+                    )
+        ```
 
 3) random.randrange() method
 
-Syntax:
-module.method
-random.randrange(start, stop, step)
+    Syntax:
+    module.method
+    random.randrange(start, stop, step)
 
-    ```Python 
-        import random
-        print(random.randrange(3, 9))
+        ```Python 
+            import random
+            print(random.randrange(3, 9))
 
-        #returns a number between 3 (included) and 9 (not included)
-    ```
+            #returns a number between 3 (included) and 9 (not included)
+        ```
 
 
 4) pop() method removes the specified index.
 
-Useful to clean up 'dirty data' (trailing items) resulting from a loop.  
+    Useful to clean up 'dirty data' (trailing items) resulting from a loop.  
 
 
-5) 
-Assignment statements do not copy objects, they create bindings between a target and an object. When we use the = operator, It only creates a new variable that shares the reference of the original object. In order to create “real copies” or “clones” of these objects, we can use the copy module in Python.
+5) copy.deepcopy(list)
+    Assignment statements do not copy objects, they create bindings between a target and an object. When we use the = operator, It only creates a new variable that shares the reference of the original object. In order to create “real copies” or “clones” of these objects, we can use the copy module in Python.
 
-In the case of deep copy, a copy of the object is copied into another object. It means that any changes made to a copy of the object do not reflect in the original object. 
-
-
-
-Syntax: 
-module.method
-copy.deepcopy(list)
-
-    ```Python 
-        # importing copy module
-        import copy
-        
-        # initializing list 1
-        li1 = [1, 2, [3, 5], 4]
-        
-        # using copy for shallow copy
-        li2 = copy.copy(li1)
-        print("li2 ID: ", id(li2), "Value: ", li2)
-        # using deepcopy for deepcopy
-        li3 = copy.deepcopy(li1)
-        print("li3 ID: ", id(li3), "Value: ", li3)
-    ```
+    In the case of deep copy, a copy of the object is copied into another object. It means that any changes made to a copy of the object do not reflect in the original object. 
 
 
-Output:
 
-    ```Python 
-        li2 ID:  2521878674624 Value:  [1, 2, [3, 5], 4]
-        li3 ID:  2521878676160 Value:  [1, 2, [3, 5], 4]
-    ```
+    Syntax: 
+    module.method
+    copy.deepcopy(list)
+
+        ```Python 
+            # importing copy module
+            import copy
+            
+            # initializing list 1
+            li1 = [1, 2, [3, 5], 4]
+            
+            # using copy for shallow copy
+            li2 = copy.copy(li1)
+            print("li2 ID: ", id(li2), "Value: ", li2)
+            # using deepcopy for deepcopy
+            li3 = copy.deepcopy(li1)
+            print("li3 ID: ", id(li3), "Value: ", li3)
+        ```
+
+
+    Output:
+
+        ```Python 
+            li2 ID:  2521878674624 Value:  [1, 2, [3, 5], 4]
+            li3 ID:  2521878676160 Value:  [1, 2, [3, 5], 4]
+        ```
 
 
 
 6. count() Method
 
-Example
-Return the number of times the value "cherry" appears in the fruits list:
+    Example
+    Return the number of times the value "cherry" appears in the fruits list:
 
     ```Python 
         fruits = ["apple", "banana", "cherry", "cherry"]
@@ -204,9 +204,9 @@ Return the number of times the value "cherry" appears in the fruits list:
 
 7. The keys() method 
 
-The keys() method returns a view object. The view object contains the keys of the dictionary, as a list.
+    The keys() method returns a view object. The view object contains the keys of the dictionary, as a list.
 
-The view object will reflect any changes done to the dictionary, see example below.
+    The view object will reflect any changes done to the dictionary, see example below.
 
 Syntax
 dictionary.keys()
@@ -227,7 +227,7 @@ dictionary.keys()
 
 8. ;print(variable)
 
-At the end of each line to trace and debug. 
+    At the end of each line to trace and debug. 
 
 
 <br>
